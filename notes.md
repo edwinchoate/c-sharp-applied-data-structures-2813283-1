@@ -168,3 +168,26 @@ LinkedListNode<string> crackersNode = cheeseNode.Next;
 string crackers = crackersNode.Value;
 ```
 
+### List vs. LinkedList
+
+`List`
+
+* O(1) item lookup
+* O(n) Adding an item
+* O(1) Adding item to end
+* O(n) Adding item to end, if list needs resizing
+* O(n) Removing an item
+
+So, constant time for item access and linear for adding and removing.
+
+`LinkedList`
+
+* O(n) item lookup
+* O(1) item lookup, if item is at beginning or end
+* O(n) Adding an item
+* O(1) Adding an item, if adding to beginning or end
+* O(n) Removing an item
+* O(1) Removing an item, if removing from beginning or end
+
+So, constant time when working on the beginning or end of the lists and linear otherwise.
+
