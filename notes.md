@@ -108,3 +108,63 @@ bool result = list.TrueForAll(x => x.Length > 10);
 // True if every string in the List<string> has a length >= 10
 ```
 
+### LinkedList 
+
+_linked list_ - the elements are accessed sequentially, rathan than directly using an index.
+
+* Each element contains the value held in the item, and a reference to the next and previous items in the list 
+* C#'s `LinkedList` is a doubly-linked list because you can traverse it in both directions, forwards and backwards, thanks to the `Next` and `Previous` properties
+* Items at specific indeces can't be accessed very quickly
+* Best used for data that is inherently accessed sequentially
+
+* `LinkedListNode<T>`
+    * `Value`
+    * `Next`
+    * `Previous`
+
+Creating a `LinkedList` from a regular array
+
+```C#
+string[] words = new string[] {"one", "two", "three"};
+
+LinkedList<string> list = new LinkedList<string>(words);
+```
+
+Adding a node to the beginning or end of the linked list
+
+```C#
+list.AddFirst("zero");
+list.AddLast("four");
+```
+
+Accessing the nodes at the beginning or end of the linked list 
+
+```C#
+LinkedListNode<string> firstNode = list.First;
+LinkedListNode<string> lastNode = list.Last;
+
+string firstWord = firstNode.Value;
+string lastWord = lastNode.Value;
+```
+
+Adding a node relative to another node 
+
+```C#
+list.AddAfter(list.First, 32);  // '32' is the 2nd node of the list
+```
+
+Getting a node based on its value
+
+```C#
+LinkedListNode<string> cheeseNode = list.Find("cheese");
+string cheese = cheeseNode.Value;
+```
+
+Accessing a node relative to another node 
+```C#
+LinkedListNode<string> cheeseNode = list.Find("cheese");
+
+LinkedListNode<string> crackersNode = cheeseNode.Next;
+string crackers = crackersNode.Value;
+```
+
