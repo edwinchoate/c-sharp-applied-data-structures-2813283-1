@@ -227,6 +227,10 @@ Removing the object at the top of the stack:
 string top = stack.Pop();
 
 stack.Pop();
+
+// Or
+string top;
+bool canPop = stack.TryPop(out top);
 ```
 
 Checking to see if something is in the stack:
