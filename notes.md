@@ -283,3 +283,62 @@ Clear the entire queue:
 queue.Clear();
 ```
 
+### Dictionaries 
+
+Advantages of the `Dictionary`
+
+* Very fast lookup times
+* Enforcement of a unique-key to value mapping
+    * .NET throws a `System.ArgumentException` if you attempt to add to the dictionary using a key that already exists 
+    * The `TryAdd` method allows you to check to see if the key already exists (similar to a `TryParse`)
+
+Creating a dictionary:
+
+```C#
+Dictionary<string, string> fileTypes = new Dictionary<string, string>();
+```
+
+Adding to the dictionary: 
+
+```C#
+fileTypes.Add(".bmp", "Bitmap");
+fileTypes.Add(".txt", "Plain Text");
+fileTypes.Add(".html", "HTML Document");
+fileTypes.Add(".jpg", "JPG Image");
+```
+
+Ensuring you add to the dictionary using unique keys:
+
+```C#
+try 
+{
+    fileTypes.Add(".txt", "Plain Text");
+}
+catch (ArgumentException e) {...}
+
+// Or
+bool added = fileTypes.TryAdd(".txt", "Plain Text");)
+```
+
+Seeing how many items are in the dictionary:
+
+```C#
+int n = fileTypes.Count;
+```
+
+Accessing, updating, and removing items in the dictionary: 
+
+```C#
+string description = fileTypes[".html"];
+
+fileTypes[".html"] = "Web Page";
+
+fileTypes.Remove(".html");
+```
+
+See if a given key or given value is in the dictionary: 
+
+```C#
+bool hasKey = fileTypes.ContainsKey(".txt");
+bool hasValue = fileTypes.ContainsKey("Plain Text");
+```
