@@ -347,6 +347,23 @@ bool hasKey = fileTypes.ContainsKey(".txt");
 bool hasValue = fileTypes.ContainsKey("Plain Text");
 ```
 
+Iterating through a dictionary: 
+
+```C#
+foreach (KeyValuePair<string, string> kvp in fileTypes)
+{
+    string key = kvp.Key;
+    string val = kvp.Value;
+}
+
+// Or, 
+foreach (string key in fileTypes.Keys) 
+{
+    string val = fileTypes[key];
+}
+```
+
+
 ## Ch. 4 Specialized Data Structures 
 
 `ListDictionary` - implements a dictionary using a linked list. Faster than a normal dictionary for a very small collection (n < ~100).

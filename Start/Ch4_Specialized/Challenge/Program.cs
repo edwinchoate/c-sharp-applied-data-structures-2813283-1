@@ -15,17 +15,43 @@ namespace Challenge
             // Split the string on space character boundary
             string[] wordArray = TheString.Split(' ');
 
-            // TODO: Count the total number of words
+            // TODO: Count the total number of words using a StringCollection
+            StringCollection collection = new StringCollection();
+            collection.AddRange(wordArray);
 
-
+            Console.WriteLine("Word Count: {0}", collection.Count);
+            
             // TODO: Find the longest word
-
-
             // TODO: Build the word count data
+            string longestWord = "";
+            Dictionary<string, int> uniqueWords = new();
 
+            foreach (string w in wordArray)
+            {
+                string word = w.ToLower();
+
+                if (word.Length > longestWord.Length) 
+                    longestWord = word;
+
+                if (!uniqueWords.ContainsKey(word))
+                {
+                    uniqueWords.Add(word, 1);
+                }
+                else 
+                {
+                    uniqueWords[word]++;
+                }
+            }
+
+            Console.WriteLine("Longest word: {0}", longestWord);
 
             // TODO: Print out the word count data
+            Console.WriteLine("----------------------");
 
+            foreach (string word in uniqueWords.Keys) 
+            {
+                Console.WriteLine("Word: {0}, Count: {1}", word, uniqueWords[word]);
+            }
         }
 
         static void Main(string[] args)
@@ -50,6 +76,12 @@ namespace Challenge
 
             // TODO: Convert the string array to a single string and call PrintStringStats
             string TheText = "";
+
+            StringBuilder sb = new StringBuilder();
+            sb.AppendJoin(" ", GettysburgAddress);
+
+            TheText = sb.ToString().ToLower().Trim();
+
             PrintStringStats(TheText);
         }
     }
