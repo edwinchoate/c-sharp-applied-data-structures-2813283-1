@@ -360,3 +360,5 @@ bool hasValue = fileTypes.ContainsKey("Plain Text");
 
 `SortedDictionary` - a dictionary that keeps itself in sorted order, based on the sequential order of the keys.
 
+`StringCollection` - an older concept from before `List<string>` was created. 
+
