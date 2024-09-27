@@ -346,3 +346,11 @@ See if a given key or given value is in the dictionary:
 bool hasKey = fileTypes.ContainsKey(".txt");
 bool hasValue = fileTypes.ContainsKey("Plain Text");
 ```
+
+## Ch. 4 Specialized Data Structures 
+
+`ListDictionary` - implements a dictionary using a linked list. Faster than a normal dictionary for a very small collection (n < ~100).
+`HybridDictionary` - starts out as a `ListDictionary` for small n, and then transforms itself into a regular `Dictionary` when n grows. 
+
+`ListDictionary` and `HybridDictionary` are older concepts that dont' get as much use anymore. 
+
