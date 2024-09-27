@@ -362,3 +362,32 @@ bool hasValue = fileTypes.ContainsKey("Plain Text");
 
 `StringCollection` - an older concept from before `List<string>` was created. 
 
+### StringBuilder
+
+`StringBuilder` - for working with strings more efficiently than using `string` directly
+
+Initializing a string builder: 
+
+```C#
+using System.Text;
+
+StringBuilder sb = new StringBuilder("hello", 50);
+    // param1 is the default string
+    // param2 is the initial size
+```
+
+`StringBuilder` Properties
+
+* `Capacity`
+* `MaxCapacity`
+* `Length`
+
+`StringBuilder` Methods
+
+* `Append(char[])`
+* `Append(string)`
+* `AppendFormat(formatString, ..., chars)`
+* `AppendFormat(formatString, ..., strings)`
+* `AppendJoin(char separator, string[])`
+* `Insert(index, string)`
+* `Replace(oldString, newString)`
