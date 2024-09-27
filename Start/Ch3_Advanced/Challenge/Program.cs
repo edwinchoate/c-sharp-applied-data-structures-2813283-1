@@ -82,6 +82,8 @@ namespace Challenge
                 }
             }
 
+            if (stack.Count > 0) return false;
+            
             return true;
         }
     }
