@@ -33,32 +33,61 @@ namespace Challenge
 
     public class ShoppingList
     {
-        // TODO: Implement the AddItem function
+
+        private List<ShoppingItem> _shoppingList = new();
+
         public void AddItem(string ItemName, double Price, int Quantity)
         {
-            // YOUR CODE GOES HERE
+            if (!_shoppingList.Exists(item => item.Name == ItemName && item.Price == Price)) 
+                _shoppingList.Add(new ShoppingItem(ItemName, Price, Quantity));
+            else 
+            {
+                int index = _shoppingList.IndexOf(_shoppingList.Find(item => item.Name == ItemName && item.Price == Price));
+                _shoppingList[index].Quantity += Quantity;
+            }
         }
 
-        // TODO: Implement the RemoveItem function
         public void RemoveItem(string ItemName)
         {
-            // YOUR CODE GOES HERE
+            ShoppingItem item = _shoppingList.Find(item => item.Name == ItemName);
+            if (item != null)
+            {
+                if (item.Quantity == 1) 
+                    _shoppingList.Remove(item);
+                else
+                    _shoppingList[_shoppingList.IndexOf(item)].Quantity--;
+            } 
         }
 
-        // TODO: Implement the GetCount function
         public int GetCount()
         {
             int count = 0;
-            // YOUR CODE GOES HERE
+            _shoppingList.ForEach(item => count += item.Quantity);
             return count;
         }
 
         public void PrintList()
         {
-            // foreach (var item in shoppingList)
-            // {
-            //     Console.WriteLine($"Item: {item.itemName,10}, Price: {item.price:C}, Quantity: {item.quantity}");
-            // }
+            foreach (var item in _shoppingList)
+            {
+                Console.WriteLine($"Item: {item.Name,10}, Price: {item.Price:C}, Quantity: {item.Quantity}");
+            }
         }
+    }
+
+    public class ShoppingItem 
+    {
+
+        public ShoppingItem (string name, double price, int quantity) 
+        {
+            Name = name;
+            Price = price;
+            Quantity = quantity;
+        }
+
+        public string Name { get; set; }
+        public double Price { get; set; }
+        public int Quantity { get; set; }
+
     }
 }
