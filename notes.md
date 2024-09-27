@@ -352,5 +352,11 @@ bool hasValue = fileTypes.ContainsKey("Plain Text");
 `ListDictionary` - implements a dictionary using a linked list. Faster than a normal dictionary for a very small collection (n < ~100).
 `HybridDictionary` - starts out as a `ListDictionary` for small n, and then transforms itself into a regular `Dictionary` when n grows. 
 
-`ListDictionary` and `HybridDictionary` are older concepts that dont' get as much use anymore. 
+* `ListDictionary` and `HybridDictionary` are older concepts that dont' get as much use anymore. 
+
+`OrderedDictionary` - a dictionary that maintains the order _in which entries were added_. 
+
+* The API for `OrderDictionary` is very similar to the standard `Dictionary`. It works in basically the same way. 
+
+`SortedDictionary` - a dictionary that keeps itself in sorted order, based on the sequential order of the keys.
 
