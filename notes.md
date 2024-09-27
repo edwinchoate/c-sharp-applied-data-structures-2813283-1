@@ -234,3 +234,52 @@ Checking to see if something is in the stack:
 ```C#
 if (stack.Contains("two")) {...}
 ```
+
+### Queues
+
+Creating a queue:
+
+```C#
+Queue<string> queue = new Queue<string>();
+```
+
+Adding items to a queue:
+
+```C#
+queue.Enqueue("one");
+queue.Enqueue("two");
+queue.Enqueue("three");
+```
+
+Get the length of the queue:
+
+```C#
+int n = queue.Count;
+```
+
+Access the front of the queue without modifying the queue:
+
+```C#
+string front = queue.Peek();
+```
+
+Remove the object at the front of the queue:
+
+```C#
+string front = queue.Dequeue();
+
+queue.Dequeue();
+```
+
+Check if some object is in the queue:
+
+```C#
+if (queue.Contains("two")) {...}
+```
+
+Clear the entire queue:
+
+```C#
+queue.Clear();
+```
+
