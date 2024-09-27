@@ -191,3 +191,46 @@ So, constant time for item access and linear for adding and removing.
 
 So, constant time when working on the beginning or end of the lists and linear otherwise.
 
+## Ch. 3 Advanced Data Structures 
+
+### Stacks
+
+Creating a stack 
+
+```C#
+Stack<string> stack = new Stack<string>();
+```
+
+Adding to the stack:
+
+```C#
+stack.Push("one");
+stack.Push("two");
+stack.Push("three");
+```
+
+Getting the height of the stack:
+
+```C#
+int n = stack.Count;
+```
+
+Accessing the top of the stack without modifying the stack:
+
+```C#
+string top = stack.Peek();
+```
+
+Removing the object at the top of the stack:
+
+```C#
+string top = stack.Pop();
+
+stack.Pop();
+```
+
+Checking to see if something is in the stack:
+
+```C#
+if (stack.Contains("two")) {...}
+```
