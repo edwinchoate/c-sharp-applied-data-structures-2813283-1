@@ -344,7 +344,7 @@ See if a given key or given value is in the dictionary:
 
 ```C#
 bool hasKey = fileTypes.ContainsKey(".txt");
-bool hasValue = fileTypes.ContainsKey("Plain Text");
+bool hasValue = fileTypes.ContainsValue("Plain Text");
 ```
 
 Iterating through a dictionary: 
